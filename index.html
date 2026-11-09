@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Umar Ghani</title>
-  <meta name="description" content="Umar Ghani — UC Berkeley, AI researcher and engineer." />
+  <meta name="description" content="Umar Ghani — UC Berkeley. Inference, multi-agent systems, and frontier models." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif' font-weight='700' fill='black'>U</text></svg>" />
 
   <style>
@@ -62,7 +62,8 @@
       text-decoration: none;
       color: inherit;
     }
-    a.site-title { color: inherit; text-decoration: none; }
+    a.site-title { color: #171717; text-decoration: none; }
+    html.dark a.site-title { color: #fff; }
 
     nav {
       display: flex;
@@ -160,23 +161,6 @@
     }
     html.dark section h2 { color: #737373; border-bottom-color: #262626; }
 
-    /* ── News ── */
-    .news-list { list-style: none; }
-    .news-list li {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 12px;
-      padding: 6px 0;
-      font-size: 15.5px;
-    }
-    .news-date {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: #737373;
-      padding-top: 2px;
-      white-space: nowrap;
-    }
-
     /* ── Experience ── */
     .entry { margin-bottom: 28px; }
     .entry-header {
@@ -251,27 +235,13 @@
       text-align: right;
     }
 
-    /* ── Hackathons ── */
-    .hackathon-list { list-style: none; }
-    .hackathon-list li {
-      display: grid;
-      grid-template-columns: 90px 1fr auto;
-      gap: 12px;
-      padding: 5px 0;
-      font-size: 15px;
-      align-items: baseline;
-    }
-    .hack-place {
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: #737373;
-    }
-    .hack-name { color: #404040; }
-    html.dark .hack-name { color: #d4d4d4; }
-    .hack-link {
-      font-family: var(--font-mono);
-      font-size: 12px;
-    }
+    /* ── Intro ── */
+    .intro { margin-bottom: 48px; }
+    .intro p { font-size: 15.5px; color: #404040; line-height: 1.65; margin-bottom: 14px; }
+    html.dark .intro p { color: #d4d4d4; }
+
+    .section-lede { font-size: 15.5px; color: #404040; margin-bottom: 16px; }
+    html.dark .section-lede { color: #d4d4d4; }
 
     /* ── Links ── */
     a { color: var(--color-link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
@@ -289,18 +259,12 @@
     }
     html.dark footer { border-top-color: #262626; }
 
-    /* ── Misc ── */
-    .misc-text { font-size: 15.5px; color: #404040; line-height: 1.65; }
-    html.dark .misc-text { color: #d4d4d4; }
-
     ::selection { background: #e2e8f0; }
     html.dark ::selection { background: #334155; }
 
     @media (max-width: 600px) {
       .hero { flex-direction: column; gap: 20px; }
       .hero-photo { width: 120px; height: 120px; }
-      .news-list li { grid-template-columns: 1fr; gap: 2px; }
-      .hackathon-list li { grid-template-columns: 1fr; gap: 2px; }
       .project-row { grid-template-columns: 1fr; gap: 4px; }
       nav { gap: 12px; }
     }
@@ -315,9 +279,8 @@
       <a href="/" class="site-title">Umar Ghani</a>
       <nav>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
         <a href="#hackathons">Hackathons</a>
-        <a href="#misc">Misc</a>
+        <a href="#readings">Readings</a>
         <button id="theme-toggle" aria-label="Toggle dark mode">
           <svg id="icon-sun" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
@@ -345,10 +308,8 @@
       <div class="hero-text">
         <h1>Umar Ghani</h1>
         <p>
-          undergrad studying at <strong>UC Berkeley</strong>, currently doing research at the
-          <strong>Berkeley AI Research Lab</strong> on LLM evaluations and multi-agent systems.
-          My interests span the data vendoring space, expanding agentic capabilities, distributed systems,
-          low-level optimizations, and the safety and evaluation of frontier models.
+          i like to engineer things. currently working on inference, multi-agent systems, and
+          understanding frontier models.
         </p>
         <p>
           i'm drawn to moments where intelligence — artificial or otherwise — does something
@@ -357,38 +318,28 @@
         </p>
         <div class="hero-links">
           <a href="mailto:umarghani@berkeley.edu">umarghani@berkeley.edu</a>
+          <a href="https://x.com/UmarGhani_" target="_blank" rel="noopener">X</a>
           <a href="https://github.com/RadonUmar" target="_blank" rel="noopener">github</a>
           <a href="https://linkedin.com/in/umarghani1" target="_blank" rel="noopener">linkedin</a>
-          <a href="https://x.com/UmarGhani_" target="_blank" rel="noopener">twitter</a>
         </div>
       </div>
     </section>
 
-    <!-- News -->
-    <section id="news">
-      <h2>News</h2>
-      <ul class="news-list">
-        <li>
-          <span class="news-date">Aug 2026</span>
-          <span>Started doing research at <strong>BAIR</strong> on LLM evaluations, mentored by a PhD student under Prof. Ian Stoica.</span>
-        </li>
-        <li>
-          <span class="news-date">Summer 2026</span>
-          <span>Interned at <strong>Qualcomm</strong> as a software engineer, building an AI-powered test generation platform for 5G/LTE modem validation.</span>
-        </li>
-        <li>
-          <span class="news-date">May 2026</span>
-          <span>Won <strong>1st Place</strong> (Nemotron track) at the NVIDIA Spark Hackathon with Nimverse Security.</span>
-        </li>
-        <li>
-          <span class="news-date">Apr 2026</span>
-          <span>Placed as a <strong>Top 6 Finalist</strong> out of 59 teams at the Google Gemini Hackathon at Shack15 with DrystAI.</span>
-        </li>
-        <li>
-          <span class="news-date">Jan 2026</span>
-          <span>Joined <strong>NASA Ames Research Center</strong> as a researcher, building deep learning models for solar active region detection.</span>
-        </li>
-      </ul>
+    <!-- Intro -->
+    <section class="intro">
+      <p>
+        I'm Umar. I think one of the most important things to work on right now is deploying and
+        understanding models, and figuring out how to make them run more efficiently at scale. I got
+        my start in engineering at 15, when I found a vulnerability in my school's CMS and fixed it.
+        Right now I'm working on multi-agent systems and automated research for inference engineering
+        at Berkeley's <strong>Sky Computing Lab</strong>.
+      </p>
+      <p>
+        Outside of research and engineering, I watch a lot of movies, follow sports, and chase as
+        much of life as possible. My philosophy is simple: optimize for breadth. The more of the
+        world you experience — people, places, ideas — the richer everything becomes. The best
+        people I've met are curious about everything.
+      </p>
     </section>
 
     <!-- Experience -->
@@ -397,11 +348,11 @@
 
       <div class="entry">
         <div class="entry-header">
-          <span class="entry-org">Berkeley Artificial Intelligence Research (BAIR) Lab</span>
+          <span class="entry-org">Sky Computing Lab, UC Berkeley</span>
           <span class="entry-meta">Aug 2026 – Present</span>
         </div>
         <div class="entry-role">Researcher · Berkeley, CA</div>
-        <p class="entry-body">Doing research on LLM evaluations and multi-agent systems, mentored by PhD researcher Mert Cemri under Prof. Ian Stoica.</p>
+        <p class="entry-body">Research on multi-agent systems and automated research for inference engineering, mentored by PhD researcher Mert Cemri under Prof. Ion Stoica.</p>
       </div>
 
       <div class="entry">
@@ -410,7 +361,7 @@
           <span class="entry-meta">Summer 2026</span>
         </div>
         <div class="entry-role">Software Engineering Intern · San Diego, CA</div>
-        <p class="entry-body">Built an AI-powered test generation platform for 5G NR and LTE modem validation, cutting test case creation time by 50%. Full-stack using React, Django, Docker, and Kubernetes.</p>
+        <p class="entry-body">Worked on inference workloads for on-device AI on the Hexagon NPU, as well as 5G NR/LTE modem software test case development.</p>
       </div>
 
       <div class="entry">
@@ -421,24 +372,42 @@
         <div class="entry-role">Researcher · Moffett Field, CA</div>
         <p class="entry-body">Built Vision Transformer and ConvLSTM models for early solar active region detection using magnetograms and Dopplergrams, trained on NASA HPC resources.</p>
       </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Polygon Capital Management LLC</span>
+          <span class="entry-meta">High School</span>
+        </div>
+        <div class="entry-role">Co-founder</div>
+        <p class="entry-body">A venture we started in high school to find and trade arbitrage opportunities across Kalshi, Polymarket, and other prediction markets. Built a Java API for Kalshi and a low-latency, HFT-style pipeline on a ZeroMQ message bus to detect and execute trades fast. Made over $3,000 in profit.</p>
+      </div>
     </section>
 
-    <!-- Projects -->
-    <section id="projects">
-      <h2>Projects</h2>
+    <!-- Hackathons -->
+    <section id="hackathons">
+      <h2>Hackathons</h2>
+      <p class="section-lede">10x hackathon winner (I've won 10 hackathons and participated in a lot more). Here are some highlights:</p>
 
       <div class="project-row">
         <div>
-          <div class="project-name">Kalshi Arbitrage</div>
-          <div class="project-desc">Built a Java API for Kalshi and a ZeroMQ message bus to detect and execute arbitrage opportunities across prediction markets — Kalshi, Polymarket, and others.</div>
+          <div class="project-name">Nimverse Security</div>
+          <div class="project-desc">Turns city camera feeds into real-time emergency detection. <a href="https://www.linkedin.com/feed/update/urn:li:activity:7421633631305105408/" target="_blank" rel="noopener">post →</a></div>
         </div>
-        <div class="project-badge">2024</div>
+        <div class="project-badge">1st Place · NVIDIA Spark</div>
+      </div>
+
+      <div class="project-row">
+        <div>
+          <div class="project-name">DrystAI</div>
+          <div class="project-desc">An AR assistant that remembers everyone you meet. <a href="https://x.com/cerebral_valley/status/1981799172157366736" target="_blank" rel="noopener">coverage →</a></div>
+        </div>
+        <div class="project-badge">Finalist · Google Gemini</div>
       </div>
 
       <div class="project-row">
         <div>
           <div class="project-name">GrokCast</div>
-          <div class="project-desc">AI podcast generation, built at the xAI Hackathon. <a href="https://devpost.com/software/grokcast" target="_blank" rel="noopener">devpost →</a></div>
+          <div class="project-desc">AI-generated podcasts, on demand. <a href="https://devpost.com/software/grokcast" target="_blank" rel="noopener">devpost →</a></div>
         </div>
         <div class="project-badge">xAI</div>
       </div>
@@ -446,71 +415,65 @@
       <div class="project-row">
         <div>
           <div class="project-name">Vault</div>
-          <div class="project-desc">Autonomous financial agent. <a href="https://www.youtube.com/watch?v=7le0p-yAK0g" target="_blank" rel="noopener">demo →</a></div>
+          <div class="project-desc">An autonomous agent that runs your finances. <a href="https://www.youtube.com/watch?v=7le0p-yAK0g" target="_blank" rel="noopener">demo →</a></div>
         </div>
         <div class="project-badge">Y Combinator</div>
       </div>
 
       <div class="project-row">
         <div>
-          <div class="project-name">DrystAI</div>
-          <div class="project-desc">AR networking assistant that recognizes people and recalls past interactions in real time. <a href="https://x.com/cerebral_valley/status/1981799172157366736" target="_blank" rel="noopener">coverage →</a></div>
-        </div>
-        <div class="project-badge">Finalist · Google Gemini</div>
-      </div>
-
-      <div class="project-row">
-        <div>
-          <div class="project-name">Nimverse Security</div>
-          <div class="project-desc">Real-time multimodal emergency detection from city camera feeds using deep learning.</div>
-        </div>
-        <div class="project-badge">1st Place · NVIDIA Spark</div>
-      </div>
-
-      <div class="project-row">
-        <div>
           <div class="project-name">When Agents Move Money</div>
-          <div class="project-desc">Automated blue-teaming of financial AI agents — patching harness vulnerabilities against indirect prompt injection.</div>
+          <div class="project-desc">Automated blue-teaming that hardens financial AI agents against prompt injection.</div>
         </div>
         <div class="project-badge">Security Research</div>
       </div>
+
+      <div class="project-row">
+        <div>
+          <div class="project-name">UCSD TritonHacks</div>
+          <div class="project-desc">Snap a photo of the sky to identify stars and forecast their growth or decline.</div>
+        </div>
+        <div class="project-badge">UCSD</div>
+      </div>
+
+      <div class="project-row">
+        <div>
+          <div class="project-name">AWS Production Agents Hackathon</div>
+          <div class="project-desc">A sandbox for policymakers to stress-test ideas before they go live.</div>
+        </div>
+        <div class="project-badge">AWS</div>
+      </div>
     </section>
 
-    <!-- Hackathons -->
-    <section id="hackathons">
-      <h2>Hackathons</h2>
-      <ul class="hackathon-list">
-        <li>
-          <span class="hack-place">1st Place</span>
-          <span class="hack-name">NVIDIA Spark Hackathon — Nemotron Track</span>
-        </li>
-        <li>
-          <span class="hack-place">Top 6</span>
-          <span class="hack-name">Google Gemini Hackathon @ Shack15</span>
-          <a class="hack-link" href="https://x.com/cerebral_valley/status/1981799172157366736" target="_blank" rel="noopener">[coverage]</a>
-        </li>
-        <li>
-          <span class="hack-place">Built</span>
-          <span class="hack-name">xAI Hackathon</span>
-          <a class="hack-link" href="https://devpost.com/software/grokcast" target="_blank" rel="noopener">[devpost]</a>
-        </li>
-        <li>
-          <span class="hack-place">Built</span>
-          <span class="hack-name">Y Combinator — Full Stack Agents</span>
-          <a class="hack-link" href="https://www.youtube.com/watch?v=7le0p-yAK0g" target="_blank" rel="noopener">[demo]</a>
-        </li>
-      </ul>
-    </section>
+    <!-- Readings -->
+    <section id="readings">
+      <h2>Readings</h2>
+      <p class="section-lede">Some good stuff I've read and recommend everyone read:</p>
 
-    <!-- Misc -->
-    <section id="misc">
-      <h2>Misc</h2>
-      <p class="misc-text">
-        Outside of research and engineering, I watch a lot of movies, follow sports, and chase as
-        much of life as possible. My philosophy is simple: optimize for breadth. The more of the
-        world you experience — people, places, ideas — the richer everything becomes. The best
-        people I've met are curious about everything.
-      </p>
+      <div class="project-row">
+        <div class="project-name">Zero to One</div>
+        <div class="project-badge">Peter Thiel</div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-name">The Alchemist</div>
+        <div class="project-badge">Paulo Coelho</div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-name">The Beginning of Infinity</div>
+        <div class="project-badge">David Deutsch</div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-name">Sapiens</div>
+        <div class="project-badge">Yuval Noah Harari</div>
+      </div>
+
+      <div class="project-row">
+        <div class="project-name">A Tale of Two Cities</div>
+        <div class="project-badge">Charles Dickens</div>
+      </div>
     </section>
 
   </main>
